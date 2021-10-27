@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>CRUD MVC PHP OO</title>
+</head>
+
+<style class="text/css">
+    header {
+        border-bottom: 4px solid black;
+    }
+
+    a {
+        color: #333;
+        text-decoration: none;
+    }
+    
+    a:hover{
+        color: #2D2D2D;
+        text-decoration: none;
+    }
+
+    header nav a{
+        font-size: 20px;
+        padding-right: 10px;
+    }
+    
+    header nav a:hover{
+        text-decoration: underline;
+    }
+
+    article header a:hover{
+        text-decoration: underline;
+    }
+
+    p {
+        margin: 0 auto;
+    }
+
+    header a {
+        text-shadow: 2px 2px 5px #fff;
+    }
+
+    section header{
+        text-shadow: 2px 2px #000;
+    }
+
+    article.postagens p a{
+        font-size: 1em;
+        color: #333;
+        text-align: right;
+    }
+
+    article.postagens p.text-right small strong:first-child{
+        font-size: 1em;
+        text-align: left;
+        float: left;
+    }
+
+    article[class~="postagens"]:first-of-type{
+        margin-top: -25px;
+    }
+
+    section[class~="comentarios"]{
+        background-color: transparent;
+    }
+    
+    section[class~="comentarios"] article p{
+        background-color: lightcyan;
+    }
+
+    article header .btn{
+        font-size: 0.6em;
+    }
+
+</style>
+
+<body class="bg-dark">
+
+    <div class="container page bg-light pb-2 border-bottom rounded-bottom">
+        <header class="pt-2">
+            <nav class="p-2 bg-warning">
+                <a href="index.php?pagina=home" class="h5">Home</a>
+                <a>|</a>
+                <a href="index.php?pagina=sobre" class="h5">Sobre</a>
+                <a href="index.php?pagina=comentarios" class="h5 float-right">Gerenciar Comentários</a>
+                <a class="h5 float-right">|</a>
+                <a href="index.php?pagina=gerenciar" class="h5 float-right">Gerenciar Notícias</a>
+            </nav>
+        </header>
+        <main>
+            <section class="border bg-secondary text-white rounded p-2 my-2">
+                {{content}}
+            </section>
+        </main>
+        <footer class="text-center border bg-white text-black rounded p-2">
+            <p>
+                CRUD MVC PHP OO + BOOTSTRAP
+            </p>
+            <p>
+                <small>Por <strong>Jorge Junior</strong> em curso do Rafael Capoani</small>
+            <p>
+                <small><a href="https://github.com/jorgejuniordev">https://github.com/jorgejuniordev</a></small>
+            </p>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

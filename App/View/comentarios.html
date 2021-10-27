@@ -1,0 +1,33 @@
+<article>
+    <header>
+        <h5>
+            Gerenciar Comentários
+        </h5>
+    </header>
+    <table class="table table-light table-striped text-center mt-2 rounded">
+        <thead class="table-dark">
+            <tr>
+                <th>Id</th>
+                <th>Título</th>
+                <th>Comentários</th>
+                <th>Data de Criação</th>
+                <th>Gerenciar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for postagem in postagens %}
+            <tr>
+                <td>{{ postagem.id }}</td>
+                <td>{{ postagem.titulo }}</td>
+                <td>{{ postagem.comentarios }}</td>
+                <td>{{ postagem.data_postado }}</td>
+                <td>
+                    <a href="index.php?pagina=comentarios&metodo=gerenciar&id={{ postagem.id }}">
+                        <button class="btn btn-primary btn-sm">Gerenciar Comentários</button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</article>

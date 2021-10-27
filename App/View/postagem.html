@@ -1,0 +1,51 @@
+<header class="border-0">
+    <h4>{{titulo}}</h4>
+</header>
+<article>
+    <p class="px-2 pb-2 pt-1 bg-info mb-2 bg-light text-dark">
+        {{ conteudo }}
+    </p>
+    <small>Postado em: {{ data }}</small>
+</article>
+<form action="index.php?pagina=postagem&metodo=insert" method="post" class="pt-2">
+    <input type="hidden" name="id" value="{{ id }}">
+    <header class="border-0">
+        <h5 class="text-center">Adicionar Comentário:</h5>
+    </header>
+    <article class="mx-5">
+        <div class="form-group row">
+            <div class="col-2">
+                <input type="text" name="nome" id="nome" class="form-control" placeholder="Seu nome..." required>
+            </div>
+            <div class="col-8">
+                <textarea name="mensagem" id="mensagem" class="form-control" cols="30" rows="1" placeholder="Mensagem..." required></textarea>
+            </div>
+            <div class="col-2">
+                <button type="submit" class="btn btn-info btn-block btn-md">Enviar</button>
+            </div>
+        </div>
+    </article>
+</form>
+<section class="comentarios p-2 rounded">
+    <header class="border-0">
+        <h5 class="text-center">Comentário(s):</h5>
+    </header>
+    {% if comentarios is empty %}
+        <article class="mx-5">
+            <p class="px-2 pb-2 pt-1 mb-2 rounded text-dark">
+                Não encontramos comentários na postagem.
+            </small>
+        </article>
+    {% else %}
+        {% for comentario in comentarios %}
+        <article class="mx-5">
+            <small>
+                Comentado por <strong>{{ comentario.nome }}</strong> em: {{ comentario.data_comentario }}:
+            </small>
+            <p class="px-2 pb-2 pt-1 mb-2 rounded text-dark">
+                {{ comentario.mensagem }}
+            </p>
+        </article>
+        {% endfor %}
+    {% endif %}
+</section>

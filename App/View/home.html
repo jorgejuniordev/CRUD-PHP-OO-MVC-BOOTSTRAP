@@ -1,0 +1,29 @@
+<div class="pb-3">
+    <header class="border-0">
+        <h4>Postagens:</h4>
+    </header>
+    {% for postagem in postagens %}
+    <article class="postagens">
+        <p class="text-right">
+            <small>
+                {{ postagem.data_postado }}
+            </small>
+        </p>
+        <header class="border-0 p-1 rounded-top pl-2 pt-2 bg-light text-dark">
+            <a href="index.php?pagina=postagem&id={{ postagem.id }}" class="h5">
+                {{ postagem.titulo }}
+            </a>
+        </header>
+        <p class="px-2 pb-2 bg-info mb-2 bg-light text-dark">
+            {{ postagem.conteudo|length > 300 ? postagem.conteudo|slice(0, 300) ~ '...' : postagem.conteudo  }}
+        </p>
+        <p class="text-right">
+            <small>
+                <strong>
+                    {{ postagem.comentarios }} comentário(s).
+                </strong>
+            </small>
+        </p>
+    </article>
+    {% endfor %}
+</div>

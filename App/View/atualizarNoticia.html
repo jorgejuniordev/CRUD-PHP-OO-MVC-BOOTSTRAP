@@ -1,0 +1,22 @@
+<article>
+    <header>
+        <h5>
+            Atualizar Publicação         
+            <a href="index.php?pagina=gerenciar">
+                <button class="btn btn-light btn-sm float-right">Voltar</button>
+            </a>
+        </h5>
+    </header>
+    <form action="?pagina=gerenciar&metodo=update" method="post" class="mt-2">
+        <input type="hidden" name="id" value="{{id}}">
+        <div class="form-group">
+            <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Título da notícia" value="{{titulo}}" required>
+        </div>
+        <div class="form-group">
+            <textarea name="conteudo" id="conteudo" class="form-control" cols="30" rows="5" placeholder="Conteúdo da notícia" required>{{conteudo}}</textarea>
+        </div>
+        <div class="form-group text-right">
+            <button type="submit" class="btn btn-primary btn-block btn-md">Atualizar Notícia</button>
+        </div>
+    </form>
+</article>
